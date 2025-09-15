@@ -28,6 +28,7 @@ async function handleLogin(event) {
         alert('Login failed: ' + error.message);
     } else {
         alert('Login successful!');
+        window.location.href = 'intranet.html';
         // Redirect or further logic here
     }
 }
@@ -39,6 +40,3 @@ window.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', handleLogin);
     }
 });
-if (!error) {
-    window.location.href = 'intranet.html';
-}
