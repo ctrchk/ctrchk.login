@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intranet Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; }
+        .login-container {
+            max-width: 350px;
+            margin: 100px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .hidden { display: none; }
+        .error { color: red; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="loginBox">
+        <h2>Login Required</h2>
+        <div class="error" id="errorMsg"></div>
+        <form id="loginForm">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" required><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="hidden" id="contentBox">
+        <h1>Welcome to the Intranet</h1>
+        <p>Access granted. You are now logged in.</p>
+    </div>
+
+    <script>
+        // Simple hardcoded credentials for demonstration
+        const VALID_USER = "admin";
+        const VALID_PASS = "password123";
+
+        const loginForm = document.getElementById('loginForm');
+        const loginBox = document.getElementById('loginBox');
+        const contentBox = document.getElementById('contentBox');
+        const errorMsg = document.getElementById('errorMsg');
+
+        // Check if already logged in (sessionStorage)
+        if (sessionStorage.getItem('loggedIn') === 'true') {
+            loginBox.classList.add('hidden');
+            contentBox.classList.remove('hidden');
+        }
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === VALID_USER && password === VALID_PASS) {
+                sessionStorage.setItem('loggedIn', 'true');
+                loginBox.classList.add('hidden');
+                contentBox.classList.remove('hidden');
+            } else {
+                errorMsg.textContent = "Invalid username or password.";
+            }
+        });
+    </script>
+</body>
+</html>
