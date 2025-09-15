@@ -39,3 +39,6 @@ window.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', handleLogin);
     }
 });
+if (!error) {
+    window.location.href = 'intranet.html';
+}
