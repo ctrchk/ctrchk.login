@@ -1,20 +1,71 @@
-<!DOCTYPE HTML>
-<html lang = "zh">
-    <head>
-        <meta charset = "UTF-8">
-        <title>CTRCHK INTRANET</title>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTRCHK INTRANET</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <p style="text-align:center;">城市運輸單車 CTRC HK</p>
-        <p style="text-align:center;">登入 Login</p>
-    </header>
-    <p>測試中 ON TEST</p>
-    <div style="text-align:center;">
-        <button onclick="window.location.href='login.html'">登入 SIGN IN</button>
-        <button onclick="window.location.href='regis.html'">註冊 SIGN UP</button>
+<body class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-gray-50 dark:bg-gray-800 py-8 shadow-sm">
+            <div class="text-center">
+                <h1 class="text-3xl font-bold text-primary mb-2">城市運輸單車 CTRC HK</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-300">登入 Login</p>
+            </div>
+        </header>
+
+        <main class="flex-1 flex flex-col items-center justify-center px-4 py-12">
+            <div class="mb-6">
+                <span class="inline-block px-4 py-2 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm font-medium">
+                    測試中 ON TEST
+                </span>
+            </div>
+
+            <div class="w-full max-w-sm space-y-4">
+                <button 
+                    onclick="window.location.href='login.html'"
+                    class="w-full px-6 py-3 text-base font-medium text-white bg-primary hover:bg-blue-700 rounded-lg transition-colors focus:outline-none focus:ring-4 focus:ring-primary/20"
+                >
+                    登入 SIGN IN
+                </button>
+                
+                <button 
+                    onclick="window.location.href='regis.html'"
+                    class="w-full px-6 py-3 text-base font-medium text-primary bg-white dark:bg-gray-800 border-2 border-primary hover:bg-primary hover:text-white rounded-lg transition-colors focus:outline-none focus:ring-4 focus:ring-primary/20"
+                >
+                    註冊 SIGN UP
+                </button>
+            </div>
+        </main>
+
+        <footer class="bg-gray-50 dark:bg-gray-800 py-4 border-t border-gray-200 dark:border-gray-700">
+            <p class="text-center text-sm text-gray-600 dark:text-gray-400">All Rights Reserved by CTRC HK.</p>
+        </footer>
     </div>
-    <footer>
-        <p>All Right Reserved by CTRC HK. </p>
-    </footer>
 </body>
+</html>
