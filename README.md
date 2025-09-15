@@ -1,6 +1,5 @@
 # ctrchk login 
 ## UPDATE LOGS
-<!-- TIMESTAMP_START -->
-15 SEP 2025 09:01:
-<!-- TIMESTAMP_END -->
+# My Project
+![Last Commit](https://img.shields.io/github/last-commit/username/repo)
 [Created Page]
