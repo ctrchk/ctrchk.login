@@ -27,7 +27,6 @@ async function handleLogin(event) {
     if (error) {
         alert('Login failed: ' + error.message);
     } else {
-        alert('Login successful!');
         window.location.href = 'intranet.html';
         // Redirect or further logic here
     }
